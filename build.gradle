@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'scala'
+}
+
+group 'io.izzel.taboolib'
+version '1.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots/" }
+    maven { url "http://ptms.ink:8081/repository/maven-releases/" }
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.bukkit:bukkit:1.8.8-R0.1-SNAPSHOT'
+    compile 'io.izzel.taboolib:TabooLib:5.14:all'
+    compile group: 'org.scala-lang', name: 'scala-library', version: '2.13.1'
+}
+
+tasks.withType(ScalaCompile) {
+    scalaCompileOptions.encoding = 'utf-8'
+    options.encoding = 'utf-8'
+}
